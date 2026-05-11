@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №4</title>
+    <style>
+        body { 
+            background-color: #FFCC99; 
+            background-image: url('ramka.gif'); 
+            background-repeat: repeat-y;
+            background-attachment: scroll; 
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 { font-size:16pt; color:#0033FF; font-family:Geneva, Arial; }
+        h2.curs, h3.curs { font-size:18pt; font-style:italic; font-family: "Courier New", Courier, mono; color:#46dcf9; }
+        h2.normal, p.normal { font-size:16pt; font-style:normal; color:#FF0000; }
+        
+        #bgmagenta { text-indent:20px; background-color:#1166FF; color:#FFFF00; }
+        #fishka { background-color:#CC99FF; color:#3300FF; font-family:serif; font-size:20pt; font-style:oblique; }
+        #bgyellow { background-color:#FFFF00; color:#0000FF; font-family:Verdana, Arial; }
+        
+        div.text {
+            position: absolute; font-family:"serif"; background-color:#99FFFF; color:red;
+            font-style:oblique; top: 600px; width: 850px; height: 150px; padding: 20px;
+        }
+        #first { position: absolute; top: 850px; left: 50px; width: 150px; height: 150px; padding: 20px; border: dashed 3px #0cf; background: #ccf0ff; }
+        #second { position: absolute; top: 950px; left: 150px; width: 150px; height: 150px; padding: 20px; border: dashed 3px #fc0; background: #fff0cc; font-size:10pt; }
+
+        .task2-container { margin-top: 1100px; }
+        .step { width: 500px; padding: 15px; text-indent: 25px; margin-bottom: 15px; }
+        .s1 { margin-left: 0; background: #eee; border: 1px solid #000; color: #333; }
+        .s2 { margin-left: 60pt; background: #ddd; border: 2px double #555; color: #111; }
+        .s3 { margin-left: 120pt; background: #ccc; border: 3px dashed #777; color: #000; }
+
+        .main-title { text-align: center; font-weight: bold; font-size: 20pt; margin-top: 100px; }
+        h4 { text-align: center; font-weight: bold; }
+        .col-header { font-style: italic; }
+        
+        .column {
+            position: absolute;
+            top: 1600px;
+            height: 120%;
+            padding: 10px;
+            border: 4px double red;
+            overflow-y: scroll;
+            text-indent: 15px;
+            background-color: #f0f0f0;
+            background-image: url('bg_menu.gif');
+            background-repeat: repeat-x;
+            background-attachment: fixed;
+        }
+        
+        #col1 { left: 50px; width: 600px; background-position: center; }
+        #col2 { left: 670px; width: 400px; background-position: top; }
+    </style>
+</head>
+<body>
+
+    <a style="display:block; text-align:right" href="../../index.html">
+На головну дисципліни
+</a>
+
+    <h2>Приємно на пари з ранку приходити</h2>
+    <h2 class="curs">Приємно бачити добрі очі екзаменатора</h2>
+    <h2 id="bgmagenta">Приємно зайти в деканат після сесії</h2>
+    <p id="bgmagenta">Приємно не мати "хвостів", <br> бути успішним і <br id="fishka"> упевненим у завтрашньому дні</p>
+    <h2 class="curs">Приємно вчасно захищати лабораторні роботи...</h2>
+    
+    <div class="text">
+        Життя світле й безхмарне, коли тобі 20 років і попереду 
+        <p class="normal"> море надій, </p> 
+        <hr id="bgyellow" size="8"> 
+        усе тіло наповнене енергією й готове до 
+        <p id="bgmagenta"> здійснень, щастя, любові </p>
+    </div>
+    
+    <h3 class="curs">Життя повне приємних моментів</h3>
+    <h3 id="fishka">Тільки варто небагато попрацювати</h3>
+    <hr id="bgmagenta" width="200" size="5">
+    <hr id="bgyellow" width="150" size="5">
+    <h2 id="bgyellow">Мрії прогульника</h2>
+    <h2 class="normal">Том 2. Повне зібрання студентських снів</h2>
+    
+    <div id="first">Перший блок</div>
+    <div id="second">Другий блок</div>
+
+    <div class="task2-container">
+        <div class="step s1">Абзац 1. Текст для першого блоку із нульовим відступом зліва.</div>
+        <div class="step s2">Абзац 2. Текст для другого блоку із відступом 60 пунктів.</div>
+        <div class="step s3">Абзац 3. Текст для третього блоку із відступом 120 пунктів.</div>
+    </div>
+
+    <div class="main-title">Програмування Internet</div>
+    
+    <div id="col1" class="column">
+        <h4 class="col-header">Історія виникнення Internet</h4>
+        <p>У середині 60-років у самий розпал холодної війни міністерство оборони США планувало створити мережу для управління...</p>
+        <p>Для вирішення завдання було залучено агентство ARPA. Це агентство було створено у відповідь на запуск у СРСР у 1957 році штучного супутника землі.</p>
+        <p>У 1968 році був організований тендер на створення експериментальної мережі. Тендер виграла компанія BBN. Мережа була побудована на базі міні-ЕОМ DDP-316.</p>
+    </div>
+
+    <div id="col2" class="column">
+        <h4 class="col-header">Технологія конструювання ПЗ</h4>
+        <p>Технологія конструювання ПЗ – це система інженерних принципів для створення економного ПЗ, яке надійно і ефективно працює на реальних комп’ютерах.</p>
+        <p>Методи повинні включати в себе наступні компоненти: Опис моделей системи і їх нотацій; Правила; Рекомендації; Керівництво до дії.</p>
+    </div>
+
+</body>
+</html>

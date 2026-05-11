@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №5</title>
+    <style>
+        :root {
+            --grad-linear: linear-gradient(135deg, #f0f4f0 0%, #dcedc8 100%);
+            --grad-radial: radial-gradient(circle, #43a047, #1b5e20);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--grad-linear);
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--grad-radial);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            outline: 6px double #aed581;
+            outline-offset: -12px;
+        }
+
+        header h1 {
+            text-shadow: 3px 3px 5px #000;
+        }
+
+        nav {
+            background: #2e7d32;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+  
+        .btn {
+            background: #fff;
+            color: #2e7d32;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #aed581;
+            color: #fff;
+            cursor: cell; 
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        article {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: auto;
+            resize: both; 
+        }
+
+        section {
+            margin-bottom: 30px;
+            border: 5px solid;
+            border-image: linear-gradient(to right, #4caf50, #ffeb3b) 1;
+        }
+
+     
+        .plant-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 10px solid transparent;
+            border-image-source: url('https://www.transparenttextures.com/patterns/leaf.png');
+            border-image-slice: 30;
+            border-image-repeat: round;
+            border-radius: 10px;
+        }
+
+        aside {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            height: fit-content;
+            outline: 2px solid #1b5e20;
+        }
+
+       
+        blockquote {
+            quotes: "«" "»";
+            font-style: italic;
+            color: #555;
+        }
+
+        blockquote::before { content: open-quote; font-size: 2em; color: #43a047; }
+        blockquote::after { content: close-quote; font-size: 2em; color: #43a047; }
+
+        h2::before { content: "🍃 "; }
+        h2::after { content: " [" attr(data-latin) "]"; font-size: 0.4em; color: #888; }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            border: 2px solid #43a047;
+            caret-color: #ff1744; 
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #1b5e20;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <a style="display:block; text-align:right" href="../../index.html">
+На головну дисципліни
+</a>
+
+    <header>
+        <h1>Аптека природи: Лікарські трави</h1>
+    </header>
+
+    <nav>
+        <button class="btn" onclick="alert('Перехід до каталогу...')">Каталог</button>
+        <button class="btn" onclick="alert('Завантаження рецептів...')">Рецепти</button>
+        <button class="btn" onclick="alert('Зв’язок з фітотерапевтом...')">Допомога</button>
+    </nav>
+
+    <main>
+        <article>
+            <section>
+                <h2 data-latin="Calendula officinalis">Календула (Нагідки)</h2>
+                <img src="https://picsum.photos/id/106/600/300" alt="Календула" class="plant-img">
+                <p>Ефективний антисептик та засіб для загоєння ран.</p>
+                <blockquote>Ця рослина здатна вилікувати сотню хвороб, якщо вірити народній медицині.</blockquote>
+            </section>
+
+            <section>
+                <h2 data-latin="Salvia officinalis">Шавлія лікарська</h2>
+                <img src="https://picsum.photos/id/306/600/300" alt="Шавлія" class="plant-img">
+                <p>Широко використовується при захворюваннях горла та ясен.</p>
+            </section>
+        </article>
+
+        <aside>
+            <h3>Пошук трав</h3>
+            <input type="text" placeholder="Почніть писати назву...">
+            <p style="margin-top:20px; font-size: 0.9em; color: #666;">
+                * Спробуйте змінити розмір лівого блоку, потягнувши за кут.<br>
+                * Каретка в полі вводу — червона.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&reg; 2026 Довідник лікарських рослин. Лабораторна робота №5.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №9</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+        @font-face {
+            font-family: 'CustomRobot';
+            src: local('Arial'); 
+            font-weight: bold;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 15%;
+            background-color: #1a1a1a;
+            color: #ffca28;
+            border-bottom: 3px solid #ffca28;
+            font-family: 'Caveat', cursive; 
+            font-size: 2rem;
+        }
+
+        .middle-content {
+            display: flex;
+            flex: 0 0 70%;
+            width: 100%;
+        }
+
+        .left-aside {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 20%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 calc(100% - 40%); 
+            padding: 25px;
+            overflow-y: scroll;
+            background-color: white;
+        }
+
+        .right-aside {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 20%;
+            background-color: #fff9c4;
+            padding: 20px;
+            border-left: 2px dashed #fbc02d;
+            text-align: center;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex: 0 0 15%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-family: 'CustomRobot', sans-serif; 
+        }
+
+        .info-link::after {
+            content: " (Посилання на: " attr(href) ")";
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .middle-content {
+                flex-direction: column; 
+                flex: 1 0 auto;
+            }
+            .left-aside, main, .right-aside {
+                flex: 1 0 auto;
+                width: 100%;
+            }
+            header, footer {
+                flex: 0 0 auto;
+                padding: 20px 0;
+            }
+            main {
+                overflow-y: visible;
+            }
+        }
+
+        @media print {
+            .right-aside, .left-aside {
+                display: none; 
+            }
+            main {
+                flex: 0 0 100%;
+                overflow: visible;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a style="display:block; text-align:right" href="../../index.html">
+На головну дисципліни
+</a>
+
+<div class="flex-container">
+    
+    <header>
+        <h1>АВТОСЕРВІС "МАЙСТЕР" (FLEXBOX)</h1>
+    </header>
+
+    <div class="middle-content">
+        <aside class="left-aside">
+            <h3>Наші Послуги</h3>
+            <p>• Ремонт двигуна</p>
+            <p>• Заміна мастила</p>
+            <p>• Шиномонтаж</p>
+            <p>• Електрика</p>
+        </aside>
+
+        <main>
+            <h2>Технічна база автосервісу</h2>
+            <img src="https://picsum.photos/id/1071/800/300" alt="Майстерня">
+            
+            <p>Цей макет побудований на **Flexbox**. Блок має фіксовану висоту з прокруткою, якщо тексту стає забагато. Ми використовуємо сучасні методи діагностики, щоб гарантувати надійність вашого авто.</p>
+            
+            <p><b>Великий об'єм тексту для прокрутки:</b> Сучасний автомобіль — це не просто засіб пересування, а складна комп'ютеризована система. Кожен вузол потребує професійного підходу. Наші фахівці пройшли сертифікацію для роботи з електромобілями та гібридами. Ми використовуємо оригінальні запчастини або якісні аналоги за вибором клієнта. Кожне замовлення супроводжується гарантійним талоном. Не забувайте про вчасне проходження ТО кожні 10 000 км пробігу, щоб уникнути критичних поломок.</p>
+            
+            <img src="https://picsum.photos/id/183/800/300" alt="Авто">
+            
+            <p>Завдання 2: Демонстрація функції attr(). <a href="https://service.com" class="info-link">Офіційний сайт</a></p>
+        </main>
+
+        <aside class="right-aside">
+            <h3 style="color: #d32f2f;">АКЦІЯ!</h3>
+            <p>Заміна фільтрів зі знижкою 30% до кінця тижня.</p>
+            <div style="background: #000; color: #fff; padding: 10px; margin-top: 10px;">
+                БЕЗКОШТОВНА ДІАГНОСТИКА
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Графік: Пн-Сб 09:00 - 19:00</p>
+        <p>Телефон: (050) 777-88-99</p>
+        <p>ЛАБОРАТОРНА РОБОТА 9</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

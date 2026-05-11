@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №8</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            height: 100vh;
+            grid-template-areas: 
+                "header header header"
+                "services content promo"
+                "footer footer footer";
+            grid-template-rows: 15% 70% 15%;
+            grid-template-columns: 20% 60% 20%;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 2px solid #444;
+        }
+
+        .services-col {
+            grid-area: services;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+
+        .content-col {
+            grid-area: content;
+            background-color: #fff;
+            padding: 20px;
+            overflow-y: scroll;
+        }
+
+        .promo-col {
+            grid-area: promo;
+            background-color: #ffeb3b;
+            padding: 15px;
+            border-left: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #444;
+            color: #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .grid-container {
+
+                grid-template-areas: 
+                    "header"
+                    "content"
+                    "services"
+                    "promo"
+                    "footer";
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto auto auto auto;
+                height: auto;
+            }
+
+            .content-col {
+                overflow-y: visible; 
+            }
+
+            .header h1 { font-size: 1.5rem; }
+        }
+
+        @media print {
+            .promo-col, .btn, .services-col {
+                display: none;
+            }
+            .grid-container {
+                display: block;
+                color: black;
+            }
+            .content-col {
+                width: 100%;
+                overflow: visible;
+            }
+            .header { background: none; color: black; border-bottom: 1px solid black; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <a style="display:block; text-align:right" href="../../index.html">
+На головну дисципліни
+</a>
+
+<div class="grid-container">
+    
+    <header class="header">
+        <h1>АВТОСЕРВІС "МАЙСТЕР"</h1>
+        <p>Професійний ремонт на базі CSS Grid</p>
+    </header>
+
+    <aside class="services-col">
+        <h3>Наші послуги</h3>
+        <ul>
+            <li>Ремонт двигуна</li>
+            <li>Заміна мастила</li>
+            <li>Шиномонтаж</li>
+            <li>Комп'ютерна діагностика</li>
+            <li>Ремонт ходової</li>
+        </ul>
+    </aside>
+
+    <main class="content-col">
+        <h2>Професійне обслуговування авто</h2>
+        <img src="https://picsum.photos/id/1071/600/250" alt="СТО">
+        <p>Цей блок демонструє основний контент сторінки. Ми використовуємо CSS Grid для точного позиціонування елементів макета. Технічне обслуговування — це запорука довголіття вашого автомобіля.</p>
+        
+        <p>Великий текст для перевірки скролу: Вчасна діагностика дозволяє виявити несправності на ранніх етапах. Наш сервіс пропонує повний спектр послуг. Ми працюємо з усіма марками авто, використовуючи лише сертифіковане обладнання. Кожен клієнт отримує індивідуальний підхід та гарантію на виконані роботи. Сучасні автомобілі вимагають високої точності, тому ми постійно оновлюємо наше програмне забезпечення для діагностики двигунів та електронних систем безпеки.</p>
+        
+        <img src="https://picsum.photos/id/183/600/250" alt="Авто">
+        <p>Додатковий текст: Пам'ятайте, що гальмівна система та підвіска безпосередньо впливають на безпеку руху. Не відкладайте візит до майстра, якщо почули сторонні звуки під час руху. Наш автосервіс працює вже понад 10 років, і ми пишаємося своєю репутацією серед автовласників міста.</p>
+    </main>
+
+    <aside class="promo-col">
+        <h3 style="color: #d32f2f;">СПЕЦПРОПОЗИЦІЯ</h3>
+        <p><b>-20%</b> на розвал-сходження!</p>
+        <hr>
+        <p>Безкоштовна кава кожному клієнту під час очікування.</p>
+    </aside>
+
+    <footer class="footer">
+        <p>Графік: Пн-Сб 09:00 - 18:00 | Тел: (099) 123-45-67</p>
+        <p>&copy; 2026 Лабораторна робота №8 (Grid + Media)</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
